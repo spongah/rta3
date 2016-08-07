@@ -5,7 +5,18 @@
 		<div class="rtalabel" id="rtalabel"></div>
 	</div>
 	<div class="options">
-		<a class="opt" href="?bands=26" onClick="location.reload();">26-Band</a> <a class="opt" href="?bands=45" onClick="location.reload();">45-Band</a>
+		<div>
+			<div class="opt noselect" id="octave" onClick="redrawRta(10);">1 Octave</div>
+			<div class="opt noselect" id="half" onClick="redrawRta(18);">1/2 Octave</div>
+			<div class="opt noselect" id="third" onClick="redrawRta(26);">1/3 Octave</div>
+			<div class="opt noselect" id="sixth" onClick="redrawRta(45);">1/6 Octave</div>
+		</div>
 	</div>
-
+		<div class="options">
+			<div class="opt speed noselect" id="slowest" onClick="updateSpeed('slowest');">Slowest</div>
+			<div class="opt speed noselect" id="slow" onClick="updateSpeed('slow');">Slow</div>
+			<div class="opt speed noselect" id="medium" onClick="updateSpeed('medium');">Medium</div>
+			<div class="opt speed noselect" id="fast" onClick="updateSpeed('fast');">Fast</div> 
+		</div>
+	</div>
 </div>
