@@ -2,9 +2,7 @@ body {
 	height: 0;
 }
 
-div {
-	transition-duration: 0.09s;
-}
+
 
 .title {
 	color: #999966;
@@ -26,6 +24,7 @@ div {
 }
 
 .rtabar {
+	transition-duration: 0.09s;
 	background-color: black;
 	border-radius: 15px;
 	margin: 1px;
