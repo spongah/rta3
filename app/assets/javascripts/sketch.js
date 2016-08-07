@@ -6,7 +6,7 @@ var oneThirdFreqArrayOptimized = [40,50,63,80,100,125,160,200,250,315,400,500,63
 
 var freqArray = oneThirdFreqArrayOptimized;  	// SET NUMBER OF BARS HERE
 var energyFactor = 0.2; 							// SET ENERGY MULTIPLIER HERE
-var barMultiplier = 6.5;
+var barMultiplier = 6;
 var barFloor = 5;
 
 var barWidth = parseInt(100 / freqArray.length) + 0.5;
