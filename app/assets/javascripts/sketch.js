@@ -42,6 +42,7 @@ if (QueryString.bands == 26) {
 	barWidth = parseInt(100 / freqArray.length) * 0.78;
 } else {
 	freqArray = oneThirdFreqArrayOptimized;  		// DEFAULT
+	barWidth = parseInt(100 / freqArray.length) * 0.9;
 }
 
 var energyFactor = 0.2; 											// SET ENERGY MULTIPLIER HERE
