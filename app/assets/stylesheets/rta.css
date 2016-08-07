@@ -2,8 +2,6 @@ body {
 	height: 0;
 }
 
-
-
 .title {
 	color: #999966;
 	text-align: center;
@@ -25,6 +23,7 @@ body {
 
 .rtabar {
 	transition-duration: 0.09s;
+	transition-timing-function: ease;
 	background-color: black;
 	border-radius: 15px;
 	margin: 1px;

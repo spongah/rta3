@@ -26,18 +26,20 @@ function setup() {
 
 function draw() {
 	spectrum = fft.analyze(); 
-	drawRTA(freqArray);
+	drawRTA();
 }
 
 function drawRTA() {
 	for (x=0;x<freqArray.length;x++) {
 		barHeight = parseInt(fft.getEnergy(freqArray[x]) * energyFactor);
 		barHeightPercent = ((barHeight * barMultiplier) + barFloor) * 0.25;
+		if ((barHeight / energyFactor) >= 255) { barColor = "#FF0000"; } 
+		else { barColor = "#" + (barHeight / energyFactor).toString(16) + "0000"; }
 		if (barHeight > 100) { barHeight = 100 };
 		barElement = document.getElementById('bar' + x);
-		//document.getElementById('bar' + x).style.marginTop = barHeight.toString() + "%";
 		if ((typeof(barElement) != 'undefined') && (barElement != null)) {
 			barElement.style.height = barHeightPercent.toString() + "%";
+			barElement.style.backgroundColor = barColor;
 		}
 	}
 }
@@ -60,7 +62,6 @@ function updateSpeed(newSpeed) {
 	for (x = 0 ; x < activeButtons.length ; x += 1) {
 		document.getElementById(activeButtons[x].id).className = "opt";
 	};
-
 	document.getElementById(newSpeed).className = "optActive speed noselect";
 }
 
