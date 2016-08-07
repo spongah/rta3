@@ -1,24 +1,24 @@
+body {
+	height: 0;
+}
+
 div {
-	transition-duration: 0.0s;
+	transition-duration: 0.07s;
 }
 
 .title {
 	color: #999966;
-	padding-top: 25px;
 	text-align: center;
 }
 
 .main {
 	position: absolute;
-	height: 50%;
+	height: 90%;
 	width: 100%;
 }
 
 .rta {
-	margin: 10px;
-	padding-left: 15px;
 	margin-left: auto;
-	margin-right: auto;
 	height: 90%;
 	width: 90%;
   transform: scaleX(-1);
@@ -27,6 +27,8 @@ div {
 
 .rtabar {
 	background-color: black;
+	border-radius: 15px;
+	margin: 1px;
 	color: white;
 	float: left;
 	height: 100%;
@@ -34,15 +36,17 @@ div {
 
 .rtalabel {
 	float: left;
-	height: 15px;
+	height: 20px;
 	width: 100%;
 }
 
 .rtafreq {
 	text-align: center;
 	float: left;
+	margin: 1px;
 	height: 15px;
-	font-size: 8px;
+	font-size: 9px;
+	font-weight: 9px;
 	transform: scaleX(-1);
   transform: scaleY(-1);
 }

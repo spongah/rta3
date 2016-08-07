@@ -6,10 +6,10 @@ var oneThirdFreqArrayOptimized = [40,50,63,80,100,125,160,200,250,315,400,500,63
 
 var freqArray = oneThirdFreqArrayOptimized;  	// SET NUMBER OF BARS HERE
 var energyFactor = 0.2; 							// SET ENERGY MULTIPLIER HERE
-var barMultiplier = 5.5;
-var barFloor = 5;
+var barMultiplier = 7;
+var barFloor = 10;
 
-var barWidth = parseInt(100 / freqArray.length) + 0.5;
+var barWidth = parseInt(100 / freqArray.length) * 1;
 
 
 function setup() {
@@ -41,8 +41,9 @@ function draw() {
 function drawRTA() {
 	for (x=0;x<freqArray.length;x++) {
 		barHeight = parseInt(fft.getEnergy(freqArray[x]) * energyFactor);
+		barHeightPercent = ((barHeight * barMultiplier) + barFloor) * 0.25;
 		if (barHeight > 100) { barHeight = 100 };
 		//document.getElementById('bar' + x).style.marginTop = barHeight.toString() + "%";
-		document.getElementById('bar' + x).style.height = ((barHeight * barMultiplier) + barFloor).toString() + "px";
+		document.getElementById('bar' + x).style.height = barHeightPercent.toString() + "%";
 	}
 }
