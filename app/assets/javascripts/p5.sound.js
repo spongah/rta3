@@ -6327,11 +6327,11 @@ audioin = function () {
     this.amplitude = new p5.Amplitude();
     this.output.connect(this.amplitude.input);
     // Some browsers let developer determine their input sources
-    if (typeof window.MediaStreamTrack === 'undefined') {
+    if (typeof navigator.mediaDevices.enumerateDevices === 'undefined') {  //UPDATED TO ENUMERATEDEVICES
       window.alert('This browser does not support MediaStreamTrack');
-    } else if (typeof window.MediaStreamTrack.getSources === 'function') {
+    } else if (typeof navigator.mediaDevices.enumerateDevices === 'function') {   //UPDATED TO ENUMERATEDEVICES
       // Chrome supports getSources to list inputs. Dev picks default
-      window.MediaStreamTrack.getSources(this._gotSources);
+      navigator.mediaDevices.enumerateDevices().then(this._gotSources); //UPDATED TO ENUMERATEDEVICES
     } else {
     }
     // add to soundArray so we can dispose on close
